@@ -13,6 +13,7 @@ public class Conta {
     private Integer agencia;
     private Integer numero;
     private String titular;
+    private Double saldo;
     
 	public Long getId() {
 		return id;
@@ -37,6 +38,12 @@ public class Conta {
 	}
 	public void setNumero(Integer numero) {
 		this.numero = numero;
+	}
+	public Double getSaldo() {
+		return saldo;
+	}
+	public void setSaldo(Double saldo) {
+		this.saldo = saldo;
 	}
 
 }

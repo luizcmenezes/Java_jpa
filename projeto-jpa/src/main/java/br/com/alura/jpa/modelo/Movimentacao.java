@@ -19,7 +19,6 @@ public class Movimentacao {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
 	@Enumerated(EnumType.STRING)
 	private TipoMovimentacao tipoMvimentacao;
 	private LocalDateTime data;

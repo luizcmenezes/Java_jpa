@@ -7,24 +7,24 @@ import javax.inject.Named;
 
 @Named
 @SessionScoped
-public class MenuBean implements Serializable{
+public class MenuBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private Integer index=0;
-	
+	private Integer index = 0;
+
 	public Integer getIndex() {
 		return index;
 	}
-	
+
 	public void setIndex(Integer index) {
 		this.index = index;
 	}
-	
+
 	public String paginaLivros() {
 		this.index = 0;
 		return "livros?faces-redirect=true";
 	}
-	
+
 	public String paginaAutores() {
 		this.index = 1;
 		return "autores?faces-redirect=true";

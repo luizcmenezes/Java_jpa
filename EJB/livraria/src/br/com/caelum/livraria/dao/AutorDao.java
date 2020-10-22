@@ -16,14 +16,14 @@ import javax.transaction.UserTransaction;
 import br.com.caelum.livraria.modelo.Autor;
 
 @Stateless
-@TransactionManagement(TransactionManagementType.BEAN)
+@TransactionManagement(TransactionManagementType.CONTAINER)
 public class AutorDao {
 
 	@PersistenceContext
 	private EntityManager manager;
 	
-	@Inject
-	UserTransaction tx;
+//	@Inject
+//	UserTransaction tx;
 
 	@PostConstruct
 	void aposCriacao() {
@@ -32,13 +32,14 @@ public class AutorDao {
 
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void salva(Autor autor) {
-		try {
-			tx.begin();
+//		try {
+//			tx.begin();
 			manager.persist(autor);
-			tx.commit();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//			tx.commit();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		throw new RuntimeException("Serviço externo deu erro!");
 	}
 
 	public List<Autor> todosAutores() {

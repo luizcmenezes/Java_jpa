@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import br.com.alura.entity.AgendamentoEmail;
 
@@ -22,4 +23,11 @@ public class AgendamentoEmailDao {
 		entityManager.persist(agendamentoEmail);
 	}
 
+	public List<AgendamentoEmail> listarAgendamentosEmailPorEmail(String email) {
+		TypedQuery<AgendamentoEmail> query = entityManager.createQuery(
+				"select a from AgendamentoEmail a where a.email = :pEmail and a.enviado = false",
+				AgendamentoEmail.class);
+		query.setParameter("pEmail", email);
+		return query.getResultList();
+	}
 }

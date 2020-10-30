@@ -10,12 +10,9 @@ import br.com.alura.exception.BusinessExecption;
 @Provider
 public class BusinessExceptionMapper implements ExceptionMapper<BusinessExecption> {
 
-	@Override
-	public Response toResponse(BusinessExecption e) {
-		return Response
-	            .status(Response.Status.BAD_REQUEST)
-	            .entity( MensagemErroDto.build(e.getMensagens()))
-	            .build();
-	}
+    @Override
+    public Response toResponse(BusinessExecption e) {
+        return Response.status(Response.Status.BAD_REQUEST).entity(MensagemErroDto.build(e.getMensagens())).build();
+    }
 
 }

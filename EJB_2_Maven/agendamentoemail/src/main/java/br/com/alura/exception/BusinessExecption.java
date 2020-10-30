@@ -5,7 +5,9 @@ import java.util.List;
 
 public class BusinessExecption extends Exception {
 
-	private List<String> mensagens;
+    private static final long serialVersionUID = 1L;
+
+    private List<String> mensagens;
 
 	public BusinessExecption() {
 		super();
